@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="667.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.messagesFX.MessagesController">
+   <children>
+      <Label fx:id="userLbl" layoutX="60.0" layoutY="53.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="changeImgBtn" layoutX="59.0" layoutY="78.0" mnemonicParsing="false" onAction="#changeImage" prefHeight="26.0" prefWidth="114.0" text="Change Image" />
+      <ImageView fx:id="userImg" fitHeight="73.0" fitWidth="63.0" layoutX="195.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="titleLbl" layoutX="336.0" layoutY="91.0" text="Your Messages">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="refreshBtn" layoutX="589.0" layoutY="78.0" mnemonicParsing="false" onAction="#refresh" prefHeight="26.0" prefWidth="114.0" text="Refresh" />
+      <TableView fx:id="messageTbl" layoutX="56.0" layoutY="130.0" prefHeight="200.0" prefWidth="648.0">
+        <columns>
+          <TableColumn fx:id="messageCol" prefWidth="402.3999710083008" text="Message" />
+          <TableColumn fx:id="imgCol" minWidth="0.0" prefWidth="107.99996948242188" text="Image" />
+            <TableColumn fx:id="sentCol" prefWidth="137.5999755859375" text="Sent" />
+        </columns>
+      </TableView>
+      <Button fx:id="deleteBtn" disable="true" layoutX="306.0" layoutY="343.0" mnemonicParsing="false" onAction="#deleteMessage" prefHeight="26.0" prefWidth="143.0" text="Delete message" />
+      <AnchorPane layoutX="57.0" layoutY="419.0" prefHeight="224.0" prefWidth="650.0">
+         <children>
+            <TableView fx:id="usersTbl" layoutX="1.0" prefHeight="150.0" prefWidth="648.0">
+              <columns>
+                <TableColumn fx:id="AvatarCol" prefWidth="75.0" text="Avatar" />
+                <TableColumn fx:id="NickCol" prefWidth="572.0000305175781" text="Nickname" />
+              </columns>
+            </TableView>
+            <Label layoutX="141.0" layoutY="156.0" text="Message">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="messageTxt" layoutY="183.0" prefHeight="26.0" prefWidth="351.0" />
+            <Button fx:id="sendBtn" disable="true" layoutX="495.0" layoutY="183.0" mnemonicParsing="false" onAction="#sendMessage" text="Send message" />
+            <Button fx:id="imgSelectBtn" layoutX="382.0" layoutY="183.0" mnemonicParsing="false" onAction="#selectImage" text="Select image" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="56.0" layoutY="391.0" text="Send Message">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" layoutY="391.0" text="Users">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
