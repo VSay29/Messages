@@ -3,16 +3,19 @@ package org.example.messagesFX.service;
 import com.google.gson.Gson;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+import org.example.messagesFX.model.MyImage;
 import org.example.messagesFX.model.UpdateUserResponse;
 
+import java.io.File;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateUser extends Service<UpdateUserResponse> {
 
-    String image;
+    Path image;
 
-    public UpdateUser(String image) {
+    public UpdateUser(Path image) {
         this.image = image;
     }
 
@@ -23,8 +26,8 @@ public class UpdateUser extends Service<UpdateUserResponse> {
             protected UpdateUserResponse call() throws Exception {
                 Gson gson = new Gson();
 
-                Map<String, String> data = new HashMap<>();
-                data.put("image", image);
+                Map<String, MyImage> data = new HashMap<>();
+                data.put("image", new MyImage(image));
 
                 String json = ServiceUtils.getResponse(NodeServer.getServer() + "/users", gson.toJson(data), "PUT");
                 return gson.fromJson(json, UpdateUserResponse.class);

@@ -16,6 +16,7 @@ public class GetMessages extends Service<List<Message>> {
             @Override
             protected List<Message> call() throws Exception {
                 String json = ServiceUtils.getResponse(NodeServer.getServer() + "/messages", null, "GET");
+                System.out.println(json);
                 Gson gson = new Gson();
                 GetMessageResponse resp = gson.fromJson(json, GetMessageResponse.class);
                 return resp.getMessages();

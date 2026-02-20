@@ -61,6 +61,9 @@ public class ServiceUtils {
                 wr.write(data.getBytes());
                 wr.flush();
                 wr.close();
+
+                System.out.println("JSON que se enviará: " + data);
+
             }
             String charset = getCharset(conn.getHeaderField("Content-Type"));
             if (charset != null) {

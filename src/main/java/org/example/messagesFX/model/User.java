@@ -1,6 +1,8 @@
 package org.example.messagesFX.model;
 
 import com.google.gson.annotations.SerializedName;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class User {
     @SerializedName("_id")
@@ -41,9 +43,18 @@ public class User {
         this.image = image;
     }
 
+    public ImageView getImageView() {
+        return new ImageView(base64_img(this.image));
+    }
+
     @Override
     public String toString() {
         return "Name: " + name + "\nImage: " + image;
+    }
+
+    private Image base64_img(String base64) {
+        byte[] bytes = java.util.Base64.getDecoder().decode(base64);
+        return new javafx.scene.image.Image(new java.io.ByteArrayInputStream(bytes));
     }
 
 }

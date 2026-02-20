@@ -36,18 +36,19 @@
          <children>
             <TableView fx:id="usersTbl" layoutX="1.0" prefHeight="150.0" prefWidth="648.0">
               <columns>
-                <TableColumn fx:id="AvatarCol" prefWidth="75.0" text="Avatar" />
+                <TableColumn fx:id="avatarCol" prefWidth="75.0" text="Avatar" />
                 <TableColumn fx:id="NickCol" prefWidth="572.0000305175781" text="Nickname" />
               </columns>
             </TableView>
-            <Label layoutX="141.0" layoutY="156.0" text="Message">
+            <Label layoutX="141.0" layoutY="172.0" text="Message">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="messageTxt" layoutY="183.0" prefHeight="26.0" prefWidth="351.0" />
-            <Button fx:id="sendBtn" disable="true" layoutX="495.0" layoutY="183.0" mnemonicParsing="false" onAction="#sendMessage" text="Send message" />
-            <Button fx:id="imgSelectBtn" layoutX="382.0" layoutY="183.0" mnemonicParsing="false" onAction="#selectImage" text="Select image" />
+            <TextField fx:id="messageTxt" layoutY="197.0" prefHeight="26.0" prefWidth="351.0" />
+            <Button fx:id="sendBtn" disable="true" layoutX="495.0" layoutY="198.0" mnemonicParsing="false" onAction="#sendMessage" text="Send message" />
+            <Button fx:id="imgSelectBtn" layoutX="382.0" layoutY="198.0" mnemonicParsing="false" onAction="#selectImage" text="Select image" />
+            <ImageView fx:id="imgMessage" fitHeight="36.0" fitWidth="63.0" layoutX="392.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
       <Label layoutX="56.0" layoutY="391.0" text="Send Message">
